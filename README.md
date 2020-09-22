@@ -1,6 +1,8 @@
 # AutomaticImageCaptionGenerator
+## A picture is worth a thousand words
 
 ## Motivation
+The precision of a complex scene description requires a deeper representation of what's actually going on in the scene, the relation among various objects as manifested on the image and the translation of their relationships in one natural-sounding language. Many efforts of establishing such the automatic image camptioning generator combine current state-of-the-art techniques in both *computer vision (CV)* and *natural language processing (NLP)* to form a complete image description approach. We feed one image into this single jointly trained system, and a human readable sequence of words to describe this image is produced, accordingly.
 
 ## Overview
 
