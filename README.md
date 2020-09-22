@@ -1,1 +1,1 @@
-# COVID19-EncodedPneumoniaClassDecoder
+# AutomaticImageCaptionGenerator
