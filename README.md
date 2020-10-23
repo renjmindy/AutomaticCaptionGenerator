@@ -1,39 +1,74 @@
-# AutomaticImageCaptionGenerator
-## A picture is worth a thousand words
+# Project name
 
-## Motivation
-The precision of a complex scene description requires a deeper representation of what's actually going on in the scene, the relation among various objects as manifested on the image and the translation of their relationships in one natural-sounding language. Many efforts of establishing such the automatic image camptioning generator combine current state-of-the-art techniques in both *computer vision (CV)* and *natural language processing (NLP)* to form a complete image description approach. We feed one image into this single jointly trained system, and a human readable sequence of words used to describe this image is produced, accordingly. Below shows you how this application can translate from images into words automatically and accurately.
+<!--- These are examples. See https://shields.io for others or to customize this set of shields. You might want to include dependencies, project status and licence info here --->
+![GitHub repo size](https://img.shields.io/github/repo-size/scottydocs/README-template.md)
+![GitHub contributors](https://img.shields.io/github/contributors/scottydocs/README-template.md)
+![GitHub stars](https://img.shields.io/github/stars/scottydocs/README-template.md?style=social)
+![GitHub forks](https://img.shields.io/github/forks/scottydocs/README-template.md?style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/scottydocs?style=social)
 
-![cnnrnn](https://1.bp.blogspot.com/-O0jjLUCWuhY/VGp6xVUL7uI/AAAAAAAAAcg/wYxwK2AQG4Q/s1600/Screen%2BShot%2B2014-11-17%2Bat%2B2.11.11%2BPM.png)
+Project name is a `<utility/tool/feature>` that allows `<insert_target_audience>` to do `<action/task_it_does>`.
 
-## Overview
-The idea of creating one image caption generator originates from the machine translator among languages. For instance, one recurrent neural network (RNN) transforms a sentence in French into an array of vector representation, and another seperate recurrent neural network takes this vector representation as an input and then transforms it in German. We can mimic this machine translator idea to some extent. For the sake of producing the image caption, the first recurrent neural network used to convert a sentence into a vector is now replaced with one convolutional neural network (CNN) which is in use for *object detection* and *classification*. Generally speaking, the last densely connected layer of one convolutional neural network is fed into the final softmax classifier, assigning a probability that each likely object as displayed in a image. What if we dettach this softmax classifier layer, and we instead regard the last densely connected layer as one rich image embedding layer, being encoded by this pretrained convolutional neural network. This image embedding layer now behaves as the input vector representation, and it's thus fed into one recurrent neural network that is designed to produce phases. Afterward, we can then train one entire single CNN-RNN jointly system directly through a bag of images and associated captions with images. By maximizing the likelihood between ground-truth captions and recurrent neural network predictions, descriptions that recurrent neural network produces to best match each image's captions can be picked up.    
+Additional line of information text about what the project does. Your introduction should be around 2 or 3 sentences. Don't go overboard, people won't read it.
 
-![cnnrnn](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/encoder_decoder.png)
+## Prerequisites
 
-## Data
+Before you begin, ensure you have met the following requirements:
+<!--- These are just example requirements. Add, duplicate or remove as required --->
+* You have installed the latest version of `<coding_language/dependency/requirement_1>`
+* You have a `<Windows/Linux/Mac>` machine. State which OS is supported/which is not.
+* You have read `<guide/link/documentation_related_to_project>`.
 
-The image files splitted into training and validating sets are listed below. The associated caption data with these image files as ground-truth labels is also attached as follow:
+## Installing <project_name>
 
-* train images http://msvocds.blob.core.windows.net/coco2014/train2014.zip
-* validation images http://msvocds.blob.core.windows.net/coco2014/val2014.zip
-* captions for both train and validation http://msvocds.blob.core.windows.net/annotations-1-0-3/captions_train-val2014.zip
+To install <project_name>, follow these steps:
 
-## Convolutional Neural Network (CNN) : Image Feature Extraction 
+Linux and macOS:
+```
+<install_command>
+```
 
-We will use pre-trained InceptionV3 model for CNN encoder and extract its last hidden layer as an embedding:
+Windows:
+```
+<install_command>
+```
+## Using <project_name>
 
-![cnnrnn](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/inceptionv3.png)
+To use <project_name>, follow these steps:
 
-## Recurrent Neural Network (RNN) : Model Training
+```
+<usage_example>
+```
 
-Since our problem is to generate image captions, RNN text generator should be conditioned on image. The idea is to use image 
-features as an initial state for RNN.
+Add run commands and examples you think users will find useful. Provide an options reference for bonus points!
 
-![cnnrnn](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/encoder_decoder_explained.png)
+## Contributing to <project_name>
+<!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
+To contribute to <project_name>, follow these steps:
 
-## LSTM Model 
+1. Fork this repository.
+2. Create a branch: `git checkout -b <branch_name>`.
+3. Make your changes and commit them: `git commit -m '<commit_message>'`
+4. Push to the original branch: `git push origin <project_name>/<location>`
+5. Create the pull request.
 
-Below is a demonstration of how the RNN decoder works!
+Alternatively see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
-![cnnrnn](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/flatten_help.jpg)
+## Contributors
+
+Thanks to the following people who have contributed to this project:
+
+* [@scottydocs](https://github.com/scottydocs) 📖
+* [@cainwatson](https://github.com/cainwatson) 🐛
+* [@calchuchesta](https://github.com/calchuchesta) 🐛
+
+You might want to consider using something like the [All Contributors](https://github.com/all-contributors/all-contributors) specification and its [emoji key](https://allcontributors.org/docs/en/emoji-key).
+
+## Contact
+
+If you want to contact me you can reach me at <your_email@address.com>.
+
+## License
+<!--- If you're not sure which open license to use see https://choosealicense.com/--->
+
+This project uses the following license: [<license_name>](<link>).
