@@ -28,13 +28,14 @@ Before you begin, ensure you have met the following requirements:
 
 To install Automatic Image Caption Generator, follow these steps:
 
-Linux and macOS: Docker container option
+### Linux and macOS: Docker container option
+
 ```
 To install Docker container with all necessary software installed, follow
 ```
 [instructions](https://hub.docker.com/r/zimovnov/coursera-aml-docker) After that you should see a Jupyter page in your browser.
 
-Windows: Anaconda option
+### Windows: Anaconda option
 
 ```
 We highly recommend to install docker environment, but if it's not an option, you can try to install the necessary python modules with Anaconda.
