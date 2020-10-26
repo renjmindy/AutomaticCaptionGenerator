@@ -19,8 +19,8 @@ The precision of a complex scene description requires a deeper representation of
 
 Before you begin, ensure you have met the following requirements:
 <!--- These are just example requirements. Add, duplicate or remove as required --->
-* You have installed `Jupyter Notebooks` for offline analysis. There're two options to setup the Jupyter Notebooks locally: Docker container and Anaconda. You will need a computer with at least 4GB of RAM.
-* Alternatively, you can run all tasks online via `Google Colab`. Google has released its own flavour of Jupyter called Colab, which has free GPUs!
+* You have installed `Jupyter Notebooks` for **offline** analysis. There're two options to setup the Jupyter Notebooks locally: Docker container and Anaconda. You will need a computer with at least 4GB of RAM.
+* Alternatively, you can run all tasks **online** via `Google Colab`. Google has released its own flavour of Jupyter called Colab, which has free GPUs!
 * You have a `Windows/Linux/Mac` machine.
 
 ## Installing for Offline Instructions
@@ -28,27 +28,43 @@ Before you begin, ensure you have met the following requirements:
 To install Automatic Image Caption Generator, follow these steps:
 
 Linux and macOS: Docker container option
-
-Follow the [instructions](https://hub.docker.com/r/zimovnov/coursera-aml-docker) 
 ```
-to install Docker container with all necessary software installed. 
+To install Docker container with all necessary software installed, follow
+```
+[instructions](https://hub.docker.com/r/zimovnov/coursera-aml-docker) 
+```
 After that you should see a Jupyter page in your browser.
 ```
 
 Windows: Anaconda option
 
 ```
-<install_command>
-```
-## Using <project_name>
-
-To use <project_name>, follow these steps:
-
-```
-<usage_example>
+We highly recommend to install docker environment, but if it's not an option, you can try to install the necessary python modules with Anaconda.
 ```
 
-Add run commands and examples you think users will find useful. Provide an options reference for bonus points!
+* First, install Anaconda with **Python 3.5+** from [here](https://www.anaconda.com/products/individual).
+* Download `conda_requirements.txt` from [here](https://github.com/ZEMUSHKA/coursera-aml-docker/blob/master/conda_requirements.txt).
+* Open terminal on Mac/Linux or "Anaconda Prompt" in Start Menu on Windows and run:
+```
+conda config --append channels conda-forge
+conda config --append channels menpo
+conda install --yes --file conda_requirements.txt
+```
+To start Jupyter Notebooks run `jupyter notebook` on Mac/Linux or "Jupyter Notebook" in Start Menu on Windows.
+
+After that you should see a Jupyter page in your browser.
+
+## Using Automatic Image Caption Generator
+
+To use automatic image caption generator, follow these steps so that we can prepare resources inside Jupyter Notebooks (for local setups only):
+
+* Click **New** -> **Terminal** and execute: `git clone [link](https://github.com/hse-aml/intro-to-dl.git)` On Windows you might want to install [Git](https://git-scm.com/download/win) You can also download all the resources as zip archive from GitHub page.
+* Close the terminal and refresh Jupyter page, you will see **intro-to-dl folder**, go there, all the necessary notebooks are waiting for you.
+* First you need to download necessary resources, to do that open `download_resources.ipynb` and run cells for Keras and your week.
+
+Now you can open a notebook
+
+## Using GPU for offline setup (for advanced users)
 
 ## Contributing to <project_name>
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
