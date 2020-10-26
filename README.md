@@ -90,9 +90,15 @@ import setup_google_colab
 setup_google_colab.setup_week6()
 ```
 
-## Contributing to <project_name>
+* If you run many notebooks on Colab, they can continue to eat up memory, you can kill them with `! pkill -9 python3` and check with `! nvidia-smi` that GPU memory is freed.
+
+**Known issues:**
+
+* Blinking animation with `IPython.display.clear_output()`. It's usable, but still looking for a workaround.
+
+## Contributing to Automatic Image Caption Generator
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
-To contribute to <project_name>, follow these steps:
+To contribute to `automatic image caption generator`, follow these steps:
 
 1. Fork this repository.
 2. Create a branch: `git checkout -b <branch_name>`.
