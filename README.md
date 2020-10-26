@@ -1,4 +1,5 @@
-# Project name
+# Automatic Image Caption Generator
+## A picture is worth a thousand words
 
 <!--- These are examples. See https://shields.io for others or to customize this set of shields. You might want to include dependencies, project status and licence info here 
 ![GitHub repo size](https://img.shields.io/github/repo-size/scottydocs/README-template.md)
@@ -7,9 +8,12 @@
 ![GitHub forks](https://img.shields.io/github/forks/scottydocs/README-template.md?style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/scottydocs?style=social) --->
 
-Project name is a `<utility/tool/feature>` that allows `<insert_target_audience>` to do `<action/task_it_does>`.
+## Motivation
+Automatic image caption generator is a widely used deep learning application that combines `convolutional neural network` and `recurrent neural network` to allow `computer vision` tasks being `described in words` and/or in 'sound of text`. 
 
-Additional line of information text about what the project does. Your introduction should be around 2 or 3 sentences. Don't go overboard, people won't read it.
+The precision of a complex scene description requires a deeper representation of what's actually going on in the scene, the relation among various objects as manifested on the image and the translation of their relationships in one natural-sounding language. Many efforts of establishing such the automatic image camptioning generator combine current state-of-the-art techniques in both *computer vision (CV)* and *natural language processing (NLP)* to form a complete image description approach. We feed one image into this single jointly trained system, and a human readable sequence of words used to describe this image is produced, accordingly. Below shows you how this application can translate from images into words automatically and accurately.
+
+![cnnrnn](https://1.bp.blogspot.com/-O0jjLUCWuhY/VGp6xVUL7uI/AAAAAAAAAcg/wYxwK2AQG4Q/s1600/Screen%2BShot%2B2014-11-17%2Bat%2B2.11.11%2BPM.png)
 
 ## Prerequisites
 
