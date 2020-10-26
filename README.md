@@ -32,10 +32,7 @@ Linux and macOS: Docker container option
 ```
 To install Docker container with all necessary software installed, follow
 ```
-[instructions](https://hub.docker.com/r/zimovnov/coursera-aml-docker) 
-```
-After that you should see a Jupyter page in your browser.
-```
+[instructions](https://hub.docker.com/r/zimovnov/coursera-aml-docker) After that you should see a Jupyter page in your browser.
 
 Windows: Anaconda option
 
