@@ -58,7 +58,7 @@ After that you should see a Jupyter page in your browser.
 
 To use automatic image caption generator, follow these steps so that we can prepare resources inside Jupyter Notebooks (for local setups only):
 
-* Click **New** -> **Terminal** and execute: `git clone [link](https://github.com/hse-aml/intro-to-dl.git)` On Windows you might want to install [Git](https://git-scm.com/download/win) You can also download all the resources as zip archive from GitHub page.
+* Click **New** -> **Terminal** and execute: git clone [link](https://github.com/hse-aml/intro-to-dl.git) On Windows you might want to install [Git](https://git-scm.com/download/win) You can also download all the resources as zip archive from GitHub page.
 * Close the terminal and refresh Jupyter page, you will see **intro-to-dl folder**, go there, all the necessary notebooks are waiting for you.
 * First you need to download necessary resources, to do that open `download_resources.ipynb` and run cells for Keras and your week.
 
