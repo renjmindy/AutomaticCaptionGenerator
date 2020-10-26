@@ -19,13 +19,13 @@ The precision of a complex scene description requires a deeper representation of
 
 Before you begin, ensure you have met the following requirements:
 <!--- These are just example requirements. Add, duplicate or remove as required --->
-* You have installed the latest version of `<coding_language/dependency/requirement_1>`
-* You have a `<Windows/Linux/Mac>` machine. State which OS is supported/which is not.
-* You have read `<guide/link/documentation_related_to_project>`.
+* You have installed `Jupyter Notebooks` for offline analysis. There're two options to setup the Jupyter Notebooks locally: Docker container and Anaconda. You will need a computer with at least 4GB of RAM.
+* Alternatively, you can run all tasks online via `Google Colab`. Google has released its own flavour of Jupyter called Colab, which has free GPUs!
+* You have a `Windows/Linux/Mac` machine.
 
-## Installing <project_name>
+## Installing for Offline Instructions
 
-To install <project_name>, follow these steps:
+To install Automatic Image Caption Generator, follow these steps:
 
 Linux and macOS:
 ```
