@@ -9,6 +9,7 @@
 ![Twitter Follow](https://img.shields.io/twitter/follow/scottydocs?style=social) --->
 
 ## Motivation
+
 Automatic image caption generator is a widely used deep learning application that combines `convolutional neural network` and `recurrent neural network` to allow `computer vision` tasks being `described in written statement` and/or in `sound of text`.
 
 The precision of a complex scene description requires a deeper representation of what's actually going on in the scene, the relation among various objects as manifested on the image and the translation of their relationships in one natural-sounding language. Many efforts of establishing such the automatic image camptioning generator combine current state-of-the-art techniques in both *computer vision (CV)* and *natural language processing (NLP)* to form a complete image description approach. We feed one image into this single jointly trained system, and a human readable sequence of words used to describe this image is produced, accordingly. Below shows you how this application can translate from images into words automatically and accurately.
@@ -65,6 +66,29 @@ To use automatic image caption generator, follow these steps so that we can prep
 Now you can open a notebook
 
 ## Using GPU for offline setup (for advanced users)
+
+* If you have a Linux host you can try these [instructions](https://github.com/ZEMUSHKA/coursera-aml-docker#using-gpu-in-your-container-linux-hosts-only) for Docker
+* The easiest way is to go with Anaconda setup, that doesn't need virtualization and thus works with a GPU on all platforms (including Windows and Mac). You will still have to install NVIDIA GPU driver, CUDA toolkit and CuDNN (requires registration with NVIDIA) on your host machine in order for [TensorFlow to work with your GPU](https://www.tensorflow.org/install/gpu). It can be hard to follow, so you might choose to stick to a CPU version, which is also fine for the purpose of this course.
+
+## Running on Google Colab
+
+Google has released its own flavour of Jupyter called Colab, which has free GPUs!
+
+Here's how you can use it:
+
+* Open [link](https://colab.research.google.com), click Sign in in the upper right corner, use your Google credentials to sign in.
+* Click **GITHUB** tab, paste [link](https://github.com/hse-aml/intro-to-dl) and press Enter
+* Choose the [notebook](wee6/week6_final_project_image_captioning_clean.ipynb) you want to open
+* Click **File -> Save a copy in Drive**... to save your progress in Google Drive
+* Click **Runtime** -> **Change runtime type** and select `GPU` in Hardware accelerator box
+* **Execute** the following code in the first cell that downloads dependencies (change for your week number):
+
+```
+! shred -u setup_google_colab.py
+! wget https://raw.githubusercontent.com/hse-aml/intro-to-dl/master/setup_google_colab.py -O setup_google_colab.py
+import setup_google_colab
+setup_google_colab.setup_week6()
+```
 
 ## Contributing to <project_name>
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
