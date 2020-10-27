@@ -101,7 +101,7 @@ To contribute to `automatic image caption generator`, follow these steps:
 1. Fork this repository.
 2. Create a branch: `git checkout -b <branch_name>`.
 3. Make your changes and commit them: `git commit -m '<commit_message>'`
-4. Push to the original branch: `git push origin <project_name>/<location>`
+4. Push to the original branch: `git push origin AutomaticImageCaptionGenerator/<location>`
 5. Create the pull request.
 
 Alternatively see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
@@ -142,7 +142,6 @@ The idea of creating one image caption generator originates from the machine tra
 4. etc...
 
 *If your project is well underway and setup is fairly complicated (ie. requires installation of many packages) create another "setup.md" file and link to it here*  
-
 5. Follow setup [instructions](Link to file)
 
 ## Featured Notebooks/Analysis/Deliverables
