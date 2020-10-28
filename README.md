@@ -56,16 +56,6 @@ To start Jupyter Notebooks run `jupyter notebook` on Mac/Linux or "Jupyter Noteb
 
 After that you should see a Jupyter page in your browser.
 
-## Using Automatic Image Caption Generator
-
-To use automatic image caption generator, follow these steps so that we can prepare resources inside Jupyter Notebooks (for local setups only):
-
-* Click **New** -> **Terminal** and execute: git clone [link](https://github.com/hse-aml/intro-to-dl.git) On Windows you might want to install [Git](https://git-scm.com/download/win) You can also download all the resources as zip archive from GitHub page.
-* Close the terminal and refresh Jupyter page, you will see **intro-to-dl folder**, go there, all the necessary notebooks are waiting for you.
-* First you need to download necessary resources, to do that open `download_resources.ipynb` and run cells for Keras and your week.
-
-Now you can open a notebook
-
 ## Using GPU for offline setup (for advanced users)
 
 * If you have a Linux host you can try these [instructions](https://github.com/ZEMUSHKA/coursera-aml-docker#using-gpu-in-your-container-linux-hosts-only) for Docker
@@ -96,6 +86,26 @@ setup_google_colab.setup_week6()
 **Known issues:**
 
 * Blinking animation with `IPython.display.clear_output()`. It's usable, but still looking for a workaround.
+
+## Getting Started Using Automatic Image Caption Generator
+
+To use automatic image caption generator, follow these steps so that we can prepare resources inside Jupyter Notebooks (for local setups only):
+
+* Click **New** -> **Terminal** and execute: git clone [link](https://github.com/hse-aml/intro-to-dl.git) On Windows you might want to install [Git](https://git-scm.com/download/win) You can also download all the resources as zip archive from GitHub page.
+* Close the terminal and refresh Jupyter page, you will see **intro-to-dl folder**, go there, all the necessary notebooks are waiting for you.
+* First you need to download necessary resources, to do that open `download_resources.ipynb` and run cells for Keras and your week.
+
+Now you can open a notebook
+1. Clone this repo (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
+2. Raw Data is being kept [here](Repo folder containing raw data) within this repo.
+
+    *If using offline data mention that and how they may obtain the data from the froup)*
+    
+3. Data processing/transformation scripts are being kept [here](Repo folder containing data processing scripts/notebooks)
+4. etc...
+
+*If your project is well underway and setup is fairly complicated (ie. requires installation of many packages) create another "setup.md" file and link to it here*  
+5. Follow setup [instructions](Link to file)
 
 ## Contributing to Automatic Image Caption Generator
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
@@ -134,23 +144,8 @@ The idea of creating one image caption generator originates from the machine tra
 - writeup/reporting
 - etc. (be as specific as possible)
 
-## Getting Started
-
-1. Clone this repo (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
-2. Raw Data is being kept [here](Repo folder containing raw data) within this repo.
-
-    *If using offline data mention that and how they may obtain the data from the froup)*
-    
-3. Data processing/transformation scripts are being kept [here](Repo folder containing data processing scripts/notebooks)
-4. etc...
-
-*If your project is well underway and setup is fairly complicated (ie. requires installation of many packages) create another "setup.md" file and link to it here*  
-5. Follow setup [instructions](Link to file)
-
 ## Featured Notebooks/Analysis/Deliverables
 
-* [Notebook/Markdown/Slide Deck Title](link)
-* [Notebook/Markdown/Slide DeckTitle](link)
 * [Blog Post](link)
 
 ## Contact
