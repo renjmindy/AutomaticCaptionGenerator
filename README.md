@@ -162,7 +162,8 @@ The idea of creating one image caption generator originates from the machine tra
 
   - pre-trained [InceptionV3](https://research.googleblog.com/2016/03/train-your-own-image-classifier-with.html) model for CNN encoder
   ![captiongen](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/inceptionv3.png)
-  - [RNN-LSTM](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/flatten_help.jpg) should be conditioned on image in order to generate image captions
+  - RNN-LSTM should be conditioned on image in order to generate image captions 
+  ![captiongen](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/encoder_decoder_explained.png)
 
 * writeup/reporting
 
