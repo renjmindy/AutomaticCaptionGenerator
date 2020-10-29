@@ -132,6 +132,7 @@ Alternatively see the GitHub documentation on [creating a pull request](https://
 * NumPy
 
 ## Project Overview
+
 The idea of creating one image caption generator originates from the machine translator among languages. For instance, one recurrent neural network (RNN) transforms a sentence in French into an array of vector representation, and another seperate recurrent neural network takes this vector representation as an input and then transforms it in German. We can mimic this machine translator idea to some extent. For the sake of producing the image caption, the first recurrent neural network used to convert a sentence into a vector is now replaced with one convolutional neural network (CNN) which is in use for *object detection* and *classification*. Generally speaking, the last densely connected layer of one convolutional neural network is fed into the final softmax classifier, assigning a probability that each likely object as displayed in a image. What if we dettach this softmax classifier layer, and we instead regard the last densely connected layer as one rich image embedding layer, being encoded by this pretrained convolutional neural network. This image embedding layer now behaves as the input vector representation, and it's thus fed into one recurrent neural network that is designed to produce phases. Afterward, we can then train one entire single CNN-RNN jointly system directly through a bag of images and associated captions with images. By maximizing the likelihood between ground-truth captions and recurrent neural network predictions, descriptions that recurrent neural network produces to best match each image's captions can be picked up.    
 
 ![cnnrnn](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/encoder_decoder.png)
@@ -148,10 +149,10 @@ The idea of creating one image caption generator originates from the machine tra
 ## Featured Notebooks/Analysis/Deliverables/Blog Posts
 
 ### Blog Posts
+
 * [Why is CNN (if MLP available)?](https://renjmindy.github.io/why_is_cnn_if_mlp_available)
 * [What're modern CNN architectures?](https://renjmindy.github.io/introduction_to_convolutional_neural_network_cnn)
 * [How is CNN architecture built up from scratch?](https://renjmindy.github.io/introduction_to_convolutional_neural_network_cnn)
-* [Diagnosis of COVID-19 alike Viral Pneumonia:Building CNN from Scratch for Pneumonia Diagnosis by Classifying Chest X-Ray Images in Patients](https://renjmindy.github.io/diagnosis_of_covid-19_alike_viral_pneumonia)
 
 ## Contact
 
