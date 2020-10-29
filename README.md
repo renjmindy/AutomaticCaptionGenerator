@@ -95,17 +95,7 @@ To use automatic image caption generator, follow these steps so that we can prep
 * Close the terminal and refresh Jupyter page, you will see **intro-to-dl folder**, go there, all the necessary notebooks are waiting for you.
 * First you need to download necessary resources, to do that open `download_resources.ipynb` and run cells for Keras and your week.
 
-Now you can open a notebook
-1. Clone this repo (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
-2. Raw Data is being kept [here](Repo folder containing raw data) within this repo.
-
-    *If using offline data mention that and how they may obtain the data from the froup)*
-    
-3. Data processing/transformation scripts are being kept [here](Repo folder containing data processing scripts/notebooks)
-4. etc...
-
-*If your project is well underway and setup is fairly complicated (ie. requires installation of many packages) create another "setup.md" file and link to it here*  
-5. Follow setup [instructions](Link to file)
+Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/AutomaticImageCaptionGenerator) (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
 
 ## Contributing to Automatic Image Caption Generator
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
@@ -120,15 +110,26 @@ To contribute to `automatic image caption generator`, follow these steps:
 Alternatively see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
 ### Methods Used
-* Deep Learning
-* Data Visualization
-* Predictive Modeling
-* etc.
+
+* Multi-layered Perceptrons (MLPs)
+* Convolution Neural Networks (CNN)
+* Recurrent Neural Networks (RNN)
+* Transfer Learning
+* Gradient Descent
+* Backpropagation
+* Overfitting
+* Probability
+* Text Processing
 
 ### Technologies
-* Python
+
+* Python (3.x)
 * Pandas, jupyter
-* etc. 
+* Keras (2.2 or higher)
+* TensorFlow (as backend)
+* Scikit-learn
+* Matplotlib
+* NumPy
 
 ## Project Overview
 The idea of creating one image caption generator originates from the machine translator among languages. For instance, one recurrent neural network (RNN) transforms a sentence in French into an array of vector representation, and another seperate recurrent neural network takes this vector representation as an input and then transforms it in German. We can mimic this machine translator idea to some extent. For the sake of producing the image caption, the first recurrent neural network used to convert a sentence into a vector is now replaced with one convolutional neural network (CNN) which is in use for *object detection* and *classification*. Generally speaking, the last densely connected layer of one convolutional neural network is fed into the final softmax classifier, assigning a probability that each likely object as displayed in a image. What if we dettach this softmax classifier layer, and we instead regard the last densely connected layer as one rich image embedding layer, being encoded by this pretrained convolutional neural network. This image embedding layer now behaves as the input vector representation, and it's thus fed into one recurrent neural network that is designed to produce phases. Afterward, we can then train one entire single CNN-RNN jointly system directly through a bag of images and associated captions with images. By maximizing the likelihood between ground-truth captions and recurrent neural network predictions, descriptions that recurrent neural network produces to best match each image's captions can be picked up.    
