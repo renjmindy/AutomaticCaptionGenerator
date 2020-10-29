@@ -145,9 +145,13 @@ The idea of creating one image caption generator originates from the machine tra
 - writeup/reporting
 - etc. (be as specific as possible)
 
-## Featured Notebooks/Analysis/Deliverables
+## Featured Notebooks/Analysis/Deliverables/Blog Posts
 
-* [Blog Post](link)
+### Blog Posts
+* [Why is CNN (if MLP available)?](https://renjmindy.github.io/why_is_cnn_if_mlp_available)
+* [What're modern CNN architectures?](https://renjmindy.github.io/introduction_to_convolutional_neural_network_cnn)
+* [How is CNN architecture built up from scratch?](https://renjmindy.github.io/introduction_to_convolutional_neural_network_cnn)
+* [Diagnosis of COVID-19 alike Viral Pneumonia:Building CNN from Scratch for Pneumonia Diagnosis by Classifying Chest X-Ray Images in Patients](https://renjmindy.github.io/diagnosis_of_covid-19_alike_viral_pneumonia)
 
 ## Contact
 
