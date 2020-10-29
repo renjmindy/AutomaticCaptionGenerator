@@ -140,12 +140,13 @@ The idea of creating one image caption generator originates from the machine tra
 
 ## Needs of this project
 
-- frontend developers
-- data exploration/descriptive statistics
-- data processing/cleaning
-- statistical modeling
-- writeup/reporting
-- etc. (be as specific as possible)
+* data exploration/descriptive statistics
+
+  - [train images](http://msvocds.blob.core.windows.net/coco2014/train2014.zip)
+
+* data processing/cleaning
+* statistical modeling
+* writeup/reporting
 
 ## Featured Notebooks/Analysis/Deliverables/Blog Posts
 
