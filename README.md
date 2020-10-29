@@ -150,7 +150,7 @@ The idea of creating one image caption generator originates from the machine tra
 * statistical modeling
 
   - pre-trained [InceptionV3](https://research.googleblog.com/2016/03/train-your-own-image-classifier-with.html) model for CNN encoder
-  ![captiongen](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/inceptionv3.png?raw=1" style="width:70%)
+  ![captiongen](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/inceptionv3.png)
 
 * writeup/reporting
 
