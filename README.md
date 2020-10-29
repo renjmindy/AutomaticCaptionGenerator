@@ -162,7 +162,7 @@ The idea of creating one image caption generator originates from the machine tra
 
   - pre-trained [InceptionV3](https://research.googleblog.com/2016/03/train-your-own-image-classifier-with.html) model for CNN encoder
   ![captiongen](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/inceptionv3.png)
-  - RNN should be conditioned on image in order to generate image captions which behave as the initial hidden state being fed into RNN
+  - RNN should be conditioned on image in order to generate image captions which behave as the initial hidden state fed into RNN
   ![captiongen](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/encoder_decoder_explained.png)
   - `decoder` class describes how one specific type of RNN architectures, LSTM (Long Short Term Memory), works
   ![captiongen](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/flatten_help.jpg)
