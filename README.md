@@ -123,6 +123,7 @@ Alternatively see the GitHub documentation on [creating a pull request](https://
 
 ### Technologies
 
+* Traditional Image Processing Techniques, e.g. use of OpenCV, Scikit-image (skimage)
 * Python (3.x)
 * Pandas, jupyter
 * Keras (2.2 or higher)
@@ -147,10 +148,21 @@ The idea of creating one image caption generator originates from the machine tra
   - [train and validation captions](http://msvocds.blob.core.windows.net/annotations-1-0-3/captions_train-val2014.zip)
 
 * data processing/cleaning
+
+  - images:
+    + `crop_and_preprocess` function in `utils.py`
+    + `apply_model` function in `utils.py`
+  - captions:
+    + `split_sentence`
+    + `generate_vocabulary`
+    + `caption_tokens_to_indices`
+    + `batch_captions_to_matrix`
+
 * statistical modeling
 
   - pre-trained [InceptionV3](https://research.googleblog.com/2016/03/train-your-own-image-classifier-with.html) model for CNN encoder
   ![captiongen](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/inceptionv3.png)
+  - [RNN-LSTM](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/flatten_help.jpg) should be conditioned on image in order to generate image captions
 
 * writeup/reporting
 
