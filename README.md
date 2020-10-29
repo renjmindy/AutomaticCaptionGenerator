@@ -127,6 +127,7 @@ Alternatively see the GitHub documentation on [creating a pull request](https://
 * Pandas, jupyter
 * Keras (2.2 or higher)
 * TensorFlow (as backend)
+* TensorFlow.compat.v1 (disable_v2_behavior)
 * Scikit-learn
 * Matplotlib
 * NumPy
