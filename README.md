@@ -100,8 +100,10 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
 * **[Procedures](https://github.com/renjmindy/AutomaticImageCaptionGenerator/blob/master/capstone_project_image_caption_generator.ipynb)**
 
   - Set-up environment: run `setup_google_colab.py`
-    + run `setup_common` function
-    + run ``
+    + run `setup_common` function where `keras_utils.py`, `download_utils.py` and `tqdm_utils.py` are downloaded via `download_github_code`
+    + run `download_github_code` function to download `utils.py` that is in specific use for automatic image caption generator 
+    + run `download_utils` file to download image embedding pickles, compressed image and caption zip files   
+    + run `setup_keras` function 
 
   - Prepare data: extract image and caption samples from compressed files.
     + [train images](http://msvocds.blob.core.windows.net/coco2014/train2014.zip)
@@ -113,13 +115,13 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
   - image pre-processing and text cleaning
     + run `download_utils.py` to download [train2014_sample.zip](https://github.com/hse-aml/intro-to-dl/releases/tag/v0.1) and [val2014_sample.zip](https://github.com/hse-aml/intro-to-dl/releases/tag/v0.1)
     + images:
-      > write `get_cnn_encoder` to obtain one selective pre-trained model without the classifier 
-      > get training and validation images through `apply_model` function where corresponding embedding features to images are extracted
+      * write `get_cnn_encoder` to obtain one selective pre-trained model without the classifier 
+      * get training and validation images through `apply_model` function where corresponding embedding features to images are extracted
     + captions:
-      >`get_captions_for_fns`
-      >`split_sentence`
-      >`generate_vocabulary`
-      >`caption_tokens_to_indices`
+      * `get_captions_for_fns`
+      * `split_sentence`
+      * `generate_vocabulary`
+      * `caption_tokens_to_indices`
       
 * **Files** This [repository](https://github.com/renjmindy/FaceDetectors/tr) consist of multiple files:
 
