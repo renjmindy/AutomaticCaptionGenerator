@@ -106,11 +106,6 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
     + run `setup_keras` function to execute [download_utils](https://github.com/renjmindy/AutomaticImageCaptionGenerator/blob/master/download_utils.py) file where `download_all_keras_resources` function downloads pre-trained inceptionV3 model
 
   - Prepare data: extract image and caption samples from compressed files.
-    + [train images](http://msvocds.blob.core.windows.net/coco2014/train2014.zip)
-    + [validation images](http://msvocds.blob.core.windows.net/coco2014/val2014.zip)
-    + [train and validation captions](http://msvocds.blob.core.windows.net/annotations-1-0-3/captions_train-val2014.zip)
-    + train sample images: [train2014_sample.zip](https://github.com/hse-aml/intro-to-dl/releases/tag/v0.1)
-    + validation sample images: [val2014_sample.zip](https://github.com/hse-aml/intro-to-dl/releases/tag/v0.1)
     
   - image pre-processing and text cleaning
     + run `download_utils.py` to download [train2014_sample.zip](https://github.com/hse-aml/intro-to-dl/releases/tag/v0.1) and [val2014_sample.zip](https://github.com/hse-aml/intro-to-dl/releases/tag/v0.1)
@@ -118,8 +113,8 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
       * write `get_cnn_encoder` function to obtain one selective pre-trained model without the classifier 
       * get training and validation images through [apply_model](https://github.com/renjmindy/AutomaticImageCaptionGenerator/blob/master/utils.py) function where corresponding embedding features to images are extracted
     + captions:
-      * `get_captions_for_fns`
-      * `split_sentence`
+      * write `get_captions_for_fns` funtion to create one dictionary where key stands for each image's file name, and value is a list of corrsponding captions to one specific kay image 
+      * write `split_sentence` function 
       * `generate_vocabulary`
       * `caption_tokens_to_indices`
       
@@ -128,8 +123,18 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
   - `capstone_project_image_caption_generator.ipynb` -- main task, read and work
   - `setup_google_colab.py` -- 
   - `utils.py` -- image pre-processing, embedding feature extraction, embedding file saving and reading
-  - ``
+  - `keras_utils.py` --
+  - `download_utils.py` -- 
+  - 
 
+* **Dataset**
+
+  - [train images](http://msvocds.blob.core.windows.net/coco2014/train2014.zip)
+  - [validation images](http://msvocds.blob.core.windows.net/coco2014/val2014.zip)
+  - [train and validation captions](http://msvocds.blob.core.windows.net/annotations-1-0-3/captions_train-val2014.zip)
+  - train sample images: [train2014_sample.zip](https://github.com/hse-aml/intro-to-dl/releases/tag/v0.1)
+  - validation sample images: [val2014_sample.zip](https://github.com/hse-aml/intro-to-dl/releases/tag/v0.1)
+  
 ## Contributing to Automatic Image Caption Generator
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
 To contribute to `automatic image caption generator`, follow these steps:
