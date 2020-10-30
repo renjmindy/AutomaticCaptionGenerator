@@ -89,13 +89,44 @@ setup_google_colab.setup_week6()
 
 ## Getting started with using automatic image caption generator
 
-* **Usage** To use automatic image caption generator, follow these steps so that we can prepare resources inside Jupyter Notebooks (for local setups only):
+* **Usage** to use automatic image caption generator, follow these steps so that we can prepare resources inside Jupyter Notebooks (for local setups only):
 
   - Click **New** -> **Terminal** and execute: git clone [link](https://github.com/hse-aml/intro-to-dl.git) On Windows you might want to install [Git](https://git-scm.com/download/win) You can also download all the resources as zip archive from GitHub page.
   - Close the terminal and refresh Jupyter page, you will see **intro-to-dl folder**, go there, all the necessary notebooks are waiting for you.
   - First you need to download necessary resources, to do that open `download_resources.ipynb` and run cells for Keras and your week.
 
 Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/AutomaticImageCaptionGenerator) (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
+
+* **[Procedures](https://github.com/renjmindy/AutomaticImageCaptionGenerator/blob/master/capstone_project_image_caption_generator.ipynb)**
+
+  - Set-up environment: run `setup_google_colab.py`
+    + run `setup_common` function
+    + run ``
+
+  - Prepare data: extract image and caption samples from compressed files.
+    + [train images](http://msvocds.blob.core.windows.net/coco2014/train2014.zip)
+    + [validation images](http://msvocds.blob.core.windows.net/coco2014/val2014.zip)
+    + [train and validation captions](http://msvocds.blob.core.windows.net/annotations-1-0-3/captions_train-val2014.zip)
+    + train sample images: [train2014_sample.zip](https://github.com/hse-aml/intro-to-dl/releases/tag/v0.1)
+    + validation sample images: [val2014_sample.zip](https://github.com/hse-aml/intro-to-dl/releases/tag/v0.1)
+    
+  - image pre-processing and text cleaning
+    + run `download_utils.py` to download [train2014_sample.zip](https://github.com/hse-aml/intro-to-dl/releases/tag/v0.1) and [val2014_sample.zip](https://github.com/hse-aml/intro-to-dl/releases/tag/v0.1)
+    + images:
+      > write `get_cnn_encoder` to obtain one selective pre-trained model without the classifier 
+      > get training and validation images through `apply_model` function where corresponding embedding features to images are extracted
+    + captions:
+      >`get_captions_for_fns`
+      >`split_sentence`
+      >`generate_vocabulary`
+      >`caption_tokens_to_indices`
+      
+* **Files** This [repository](https://github.com/renjmindy/FaceDetectors/tr) consist of multiple files:
+
+  - `capstone_project_image_caption_generator.ipynb` -- main task, read and work
+  - `setup_google_colab.py` -- 
+  - `utils.py` -- image pre-processing, embedding feature extraction, embedding file saving and reading
+  - ``
 
 ## Contributing to Automatic Image Caption Generator
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
@@ -143,21 +174,8 @@ The idea of creating one image caption generator originates from the machine tra
 
 * data exploration/descriptive statistics
 
-  - [train images](http://msvocds.blob.core.windows.net/coco2014/train2014.zip)
-  - [validation images](http://msvocds.blob.core.windows.net/coco2014/val2014.zip)
-  - [train and validation captions](http://msvocds.blob.core.windows.net/annotations-1-0-3/captions_train-val2014.zip)
-
 * data processing/cleaning
-
-  - images:
-    + `crop_and_preprocess` function in `utils.py`
-    + `apply_model` function in `utils.py`
-  - captions:
-    + `split_sentence`
-    + `generate_vocabulary`
-    + `caption_tokens_to_indices`
-    + `batch_captions_to_matrix`
-
+    
 * statistical modeling
 
   - pre-trained [InceptionV3](https://research.googleblog.com/2016/03/train-your-own-image-classifier-with.html) model for CNN encoder
