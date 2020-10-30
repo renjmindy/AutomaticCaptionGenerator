@@ -100,10 +100,10 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
 * **[Procedures](https://github.com/renjmindy/AutomaticImageCaptionGenerator/blob/master/capstone_project_image_caption_generator.ipynb)**
 
   - Set-up environment: run `setup_google_colab.py`
-    + run `setup_common` function where `keras_utils.py`, `download_utils.py` and `tqdm_utils.py` are downloaded via `download_github_code`
+    + run `setup_common` function where `keras_utils.py`, `download_utils.py` and `tqdm_utils.py` are downloaded via `download_github_code` function
     + run `download_github_code` function to download `utils.py` that is in specific use for automatic image caption generator 
     + run `download_utils` file to download image embedding pickles, compressed image and caption zip files   
-    + run `setup_keras` function 
+    + run `setup_keras` function to execute `download_utils` file where `download_all_keras_resources` function downloads pre-trained inceptionV3 model
 
   - Prepare data: extract image and caption samples from compressed files.
     + [train images](http://msvocds.blob.core.windows.net/coco2014/train2014.zip)
