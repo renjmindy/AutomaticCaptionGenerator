@@ -89,9 +89,7 @@ setup_google_colab.setup_week6()
 
 ## Getting started with using automatic image caption generator
 
-* **Usage**
-
-To use automatic image caption generator, follow these steps so that we can prepare resources inside Jupyter Notebooks (for local setups only):
+* **Usage** To use automatic image caption generator, follow these steps so that we can prepare resources inside Jupyter Notebooks (for local setups only):
 
   - Click **New** -> **Terminal** and execute: git clone [link](https://github.com/hse-aml/intro-to-dl.git) On Windows you might want to install [Git](https://git-scm.com/download/win) You can also download all the resources as zip archive from GitHub page.
   - Close the terminal and refresh Jupyter page, you will see **intro-to-dl folder**, go there, all the necessary notebooks are waiting for you.
