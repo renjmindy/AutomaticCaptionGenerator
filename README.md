@@ -87,13 +87,15 @@ setup_google_colab.setup_week6()
 
 * Blinking animation with `IPython.display.clear_output()`. It's usable, but still looking for a workaround.
 
-## Getting Started Using Automatic Image Caption Generator
+## Getting started with using automatic image caption generator
+
+* **Usage**
 
 To use automatic image caption generator, follow these steps so that we can prepare resources inside Jupyter Notebooks (for local setups only):
 
-* Click **New** -> **Terminal** and execute: git clone [link](https://github.com/hse-aml/intro-to-dl.git) On Windows you might want to install [Git](https://git-scm.com/download/win) You can also download all the resources as zip archive from GitHub page.
-* Close the terminal and refresh Jupyter page, you will see **intro-to-dl folder**, go there, all the necessary notebooks are waiting for you.
-* First you need to download necessary resources, to do that open `download_resources.ipynb` and run cells for Keras and your week.
+  - Click **New** -> **Terminal** and execute: git clone [link](https://github.com/hse-aml/intro-to-dl.git) On Windows you might want to install [Git](https://git-scm.com/download/win) You can also download all the resources as zip archive from GitHub page.
+  - Close the terminal and refresh Jupyter page, you will see **intro-to-dl folder**, go there, all the necessary notebooks are waiting for you.
+  - First you need to download necessary resources, to do that open `download_resources.ipynb` and run cells for Keras and your week.
 
 Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/AutomaticImageCaptionGenerator) (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
 
