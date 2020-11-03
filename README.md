@@ -132,11 +132,19 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
       * write `batch_captions_to_matrix` function to convert `batch_captions` into an equal length of `matrix` for every given image. Since associated captions with one given image might have different lengths, we add `PAD` token to make shorter caption(s) become as long as the longest caption. 
       ```
       Input example: 
-      [[1, 2, 3], [4, 5]]
+                    [[1, 2, 3], [4, 5]]
       Output examples:
-   np.array([[1, 2, 3], [4, 5, pad_idx]]) if max_len=None or 100
-np.array([[1, 2], [4, 5]]) if max_len=2
-      
+                    1. if max_len=None or 100
+                       np.array([[1, 2, 3], [4, 5, pad_idx]]) 
+                    2. if max_len=2
+                       np.array([[1, 2], [4, 5]]) 
+                       
+  - model training
+    + write `decoder` class in which we compute cross-entropy between `flat_ground_truth` and `flat_token_logits` predicted by LSTM
+      * use `bottleneck` here to reduce the number of parameters : image embedding -> bottleneck -> lstm initial state
+      * 
+      * 
+    + write `generate_batch` function 
       
 * **Files** This [repository](https://github.com/renjmindy/FaceDetectors/tr) consist of multiple files:
 
