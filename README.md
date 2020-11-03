@@ -114,9 +114,9 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
       * get training and validation images through [apply_model](https://github.com/renjmindy/AutomaticImageCaptionGenerator/blob/master/utils.py) function where corresponding embedding features to images are extracted
     + captions:
       * write `get_captions_for_fns` funtion to create one dictionary where key stands for each image's file name, and value is a list of corrsponding captions to one specific kay image 
-      * write `split_sentence` function 
-      * `generate_vocabulary`
-      * `caption_tokens_to_indices`
+      * write `split_sentence` function to split one sentence into tokens, i.e. lowercased words
+      * write `generate_vocabulary` function to select most frequent tokens that occur 5 times or more from training captions
+      * write `caption_tokens_to_indices` function to construct a multi-layer of arrays which encompasses all associated captions with one given photo image    
       
 * **Files** This [repository](https://github.com/renjmindy/FaceDetectors/tr) consist of multiple files:
 
