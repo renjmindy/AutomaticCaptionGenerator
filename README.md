@@ -141,9 +141,19 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
                        
   - model training
     + write `decoder` class in which we compute cross-entropy between `flat_ground_truth` and `flat_token_logits` predicted by LSTM
-      * use `bottleneck` here to reduce the number of parameters : image embedding -> bottleneck -> lstm initial state
-      * 
-      * 
+      * use `bottleneck` here to reduce the number of parameters : image embedding -> bottleneck -> LSTM initial state
+      * use `bottleneck` here to reduce model complexity : LSTM output -> logits bottleneck -> logits for next token prediction
+      * embed all words (word -> embedding) to be used as LSTM input of ground truth tokens : `word_embeds` as context for next token prediction
+      * know all inputs for LSTM and can get all the hidden states with one tensorflow operation (tf.nn.dynamic_rnn)
+      * calculate `token_logits` for all the hidden states:
+        (1) calculate logits for next tokens
+        (2) predict next tokens for each time step
+        (3) need to know where we have real tokens (not `PAD` token)
+        (4) not propagate output `PAD` tokens for the loss computation : fill with 1.0 for real, non-`PAD` tokens and 0.0 otherwise
+      * compute cross-entropy between `ground_truth` and `token_logits` predicted by LSTM : average `xent` over tokens with nonzero `loss_mask` so that we don't account misclassification of `PAD` tokens which were added simply for the batching purpose
+      * define optimizer operation to minimize the loss
+      * save/load network weights
+      
     + write `generate_batch` function 
       
 * **Files** This [repository](https://github.com/renjmindy/FaceDetectors/tr) consist of multiple files:
