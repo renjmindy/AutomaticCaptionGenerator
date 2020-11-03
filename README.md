@@ -116,7 +116,7 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
       * write `get_captions_for_fns` funtion to create one dictionary where key stands for each image's file name, and value is a list of corrsponding captions to one specific kay image 
       * write `split_sentence` function to split one sentence into tokens, i.e. lowercased words
       * write `generate_vocabulary` function to select most frequent tokens that occur 5 times or more from training captions
-      * write `caption_tokens_to_indices` function to construct a multi-layer of arrays in which each associated caption with one given photo image is chopped into an array of words. Every image allows up to 5 arrays of semented tokens (words), every of which has `START` in the head and `END` in the tail.
+      * write `caption_tokens_to_indices` function to construct a multi-layer of arrays in which each associated caption with one given photo image is chopped into an array of words. Every image allows up to 5 arrays of semented tokens (words), every of which has `START` and `END` tokens being added from head and tail of one tokenized caption, respectively. 
         ```
         captions argument is an array of arrays: [ [ "image1 caption1", "image1 caption2", ... ], [ "image2 caption1", "image2 caption2", ... ], ... ]
         [
@@ -128,7 +128,15 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
           ...
         ]
         ```
-      * write `batch_captions_to_matrix` function to 
+        `batch_captions` turns out to be an array of arrays: [ [vocab[START], ..., vocab[END]], [vocab[START], ..., vocab[END]], ... ]
+      * write `batch_captions_to_matrix` function to convert `batch_captions` into an equal length of `matrix` for every given image. Since associated captions with one given image might have different lengths, we add `PAD` token to make shorter caption(s) become as long as the longest caption. 
+      ```
+      Input example: 
+      [[1, 2, 3], [4, 5]]
+      Output examples:
+   np.array([[1, 2, 3], [4, 5, pad_idx]]) if max_len=None or 100
+np.array([[1, 2], [4, 5]]) if max_len=2
+      
       
 * **Files** This [repository](https://github.com/renjmindy/FaceDetectors/tr) consist of multiple files:
 
