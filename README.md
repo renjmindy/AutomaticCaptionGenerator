@@ -151,7 +151,7 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
       * use `bottleneck` here to reduce model complexity : LSTM output -> logits bottleneck -> logits for next token prediction
       * embed all words (word -> embedding) to be used as LSTM input of ground truth tokens : `word_embeds` as context for next token prediction
       * know all inputs for LSTM and can get all the hidden states with one tensorflow operation (tf.nn.dynamic_rnn)
-      * calculate `token_logits` for all the hidden states step-by-step:
+      * calculate `token_logits` for all the hidden states step-by-step as follows:
         (1) calculate logits for next tokens
         (2) predict next tokens for each time step
         (3) need to know where we have real tokens (not `PAD` token)
@@ -164,7 +164,7 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
   - model application to testing samples (Applying)
     + write `final_model` class which works as follows:
       * take an image as an input and embed it : run `get_cnn_encoder` to pass images through CNN encoder in order to obtain image embedding files
-      * condition lstm on that embedding : run `decoder` class to initialize LSTM state conditioned on images
+      * condition LSTM on that embedding : run `decoder` class to initialize LSTM state being conditioned on images
       * predict the next token given a START input token : run `decoder` class to get current word embedding being passed to LSTM cell to produce new LSTM states
       * use predicted token as an input at next time step : run `decoder` class to compute logits and probabilities for next token
       * iterate until you predict an END token : `one_step` yields probabilities of next token and meanwhile updates LSTM hidden state
@@ -232,9 +232,9 @@ The idea of creating one image caption generator originates from the machine tra
 
 ## Needs of this project
 
-* image and caption data processing/cleaning
-* statistical modeling 
-* writeup/reporting
+* image and caption data pre-processing, along with tokenized caption cleaning
+* image feature extraction from pre-trained model  
+* LSTM model training to predict tokenized caption with image features as initial hidden state  
 
 ## Featured Notebooks/Analysis/Deliverables/Blog Posts
 
