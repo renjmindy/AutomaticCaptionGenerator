@@ -174,11 +174,11 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
 * **Files** This [repository](https://github.com/renjmindy/FaceDetectors/tr) consist of multiple files:
 
   - `capstone_project_image_caption_generator.ipynb` -- main task, read and work
-  - `setup_google_colab.py` -- 
-  - `utils.py` -- image pre-processing, embedding feature extraction, embedding file saving and reading
-  - `keras_utils.py` --
-  - `download_utils.py` -- 
-  - 
+  - `setup_google_colab.py` -- initialize environmental settings and call python codes as below
+  - `utils.py` -- execute image pre-processing and embedding feature extraction to save and read embedding files for future use
+  - `keras_utils.py` -- prepare keras functions useful for model training 
+  - `download_utils.py` -- download all necessary files, e.g. python codes and compressed data samples
+  - `tqdm_utils.py` -- show the completion progress of model-training tasks
 
 * **Dataset**
 
