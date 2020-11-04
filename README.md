@@ -158,7 +158,11 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
     
   - model application
     + write `final_model` class which works as follows:
-      * take an image as an input and embed it : 
+      * take an image as an input and embed it : run `get_cnn_encoder` to pass images through CNN encoder in order to obtain image embedding files
+      * condition lstm on that embedding : 
+      * predict the next token given a START input token :
+      * use predicted token as an input at next time step :
+      * iterate until you predict an END token : 
       
 * **Files** This [repository](https://github.com/renjmindy/FaceDetectors/tr) consist of multiple files:
 
