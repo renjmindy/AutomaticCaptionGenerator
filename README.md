@@ -105,15 +105,19 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
     + run `download_utils` file to download image embedding pickles, compressed image and caption zip files   
     + run `setup_keras` function to execute [download_utils](https://github.com/renjmindy/AutomaticImageCaptionGenerator/blob/master/download_utils.py) file where `download_all_keras_resources` function downloads pre-trained inceptionV3 model
 
-  - Prepare data: extract image and caption samples from compressed files.
-    
-  - image pre-processing and text cleaning
+  - Prepare data (Extract image features/Extract captions for images) by extracting image and caption samples from compressed files
     + run `download_utils.py` to download [train2014_sample.zip](https://github.com/hse-aml/intro-to-dl/releases/tag/v0.1) and [val2014_sample.zip](https://github.com/hse-aml/intro-to-dl/releases/tag/v0.1)
     + images:
       * write `get_cnn_encoder` function to obtain one selective pre-trained model without the classifier 
+      pre-trained [InceptionV3](https://research.googleblog.com/2016/03/train-your-own-image-classifier-with.html) model for CNN encoder![captiongen](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/inceptionv3.png)
       * get training and validation images through [apply_model](https://github.com/renjmindy/AutomaticImageCaptionGenerator/blob/master/utils.py) function where corresponding embedding features to images are extracted
     + captions:
       * write `get_captions_for_fns` funtion to create one dictionary where key stands for each image's file name, and value is a list of corrsponding captions to one specific kay image 
+      * write `show_trainig_example` function to look at training example (each has 5 captions)
+    
+  - image pre-processing and text cleaning (Prepare captions for training)
+    RNN should be conditioned on images to generate image captions behaving as RNN initial hidden state![captiongen](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/encoder_decoder_explained.png)
+    + captions:
       * write `split_sentence` function to split one sentence into tokens, i.e. lowercased words
       * write `generate_vocabulary` function to select most frequent tokens that occur 5 times or more from training captions
       * write `caption_tokens_to_indices` function to construct a multi-layer of arrays in which each associated caption with one given photo image is chopped into an array of words. Every image allows up to 5 arrays of semented tokens (words), every of which has `START` and `END` tokens being added from head and tail of one tokenized caption, respectively. 
@@ -140,8 +144,9 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
                        np.array([[1, 2], [4, 5]]) 
        ```
        
-  - model training
+  - model training (Training) 
     + write `decoder` class in which we compute cross-entropy between `flat_ground_truth` and `flat_token_logits` predicted by LSTM
+      `decoder` class describes how one specific type of RNN architectures, LSTM (Long Short Term Memory), works![captiongen](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/flatten_help.jpg)
       * use `bottleneck` here to reduce the number of parameters : image embedding -> bottleneck -> LSTM initial state
       * use `bottleneck` here to reduce model complexity : LSTM output -> logits bottleneck -> logits for next token prediction
       * embed all words (word -> embedding) to be used as LSTM input of ground truth tokens : `word_embeds` as context for next token prediction
@@ -156,13 +161,15 @@ Now you can open a notebook by cloning this [repo](https://github.com/renjmindy/
       * save/load network weights     
     + write `generate_batch` function to generate a random batch of size `batch_size` via random sampling of images and captions for them
     
-  - model application
+  - model application to testing samples (Applying)
     + write `final_model` class which works as follows:
       * take an image as an input and embed it : run `get_cnn_encoder` to pass images through CNN encoder in order to obtain image embedding files
-      * condition lstm on that embedding : 
-      * predict the next token given a START input token :
-      * use predicted token as an input at next time step :
-      * iterate until you predict an END token : 
+      * condition lstm on that embedding : run `decoder` class to initialize LSTM state conditioned on images
+      * predict the next token given a START input token : run `decoder` class to get current word embedding being passed to LSTM cell to produce new LSTM states
+      * use predicted token as an input at next time step : run `decoder` class to compute logits and probabilities for next token
+      * iterate until you predict an END token : `one_step` yields probabilities of next token and meanwhile updates LSTM hidden state
+    + write `generate_caption` function to generate caption for given image
+    + write `apply_model_to_image_raw_bytes` and `show_valid_example` functions to look at validation prediction example
       
 * **Files** This [repository](https://github.com/renjmindy/FaceDetectors/tr) consist of multiple files:
 
@@ -225,19 +232,8 @@ The idea of creating one image caption generator originates from the machine tra
 
 ## Needs of this project
 
-* data exploration/descriptive statistics
-
-* data processing/cleaning
-    
-* statistical modeling
-
-  - pre-trained [InceptionV3](https://research.googleblog.com/2016/03/train-your-own-image-classifier-with.html) model for CNN encoder
-  ![captiongen](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/inceptionv3.png)
-  - RNN should be conditioned on images to generate image captions behaving as RNN initial hidden state
-  ![captiongen](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/encoder_decoder_explained.png)
-  - `decoder` class describes how one specific type of RNN architectures, LSTM (Long Short Term Memory), works
-  ![captiongen](https://github.com/hse-aml/intro-to-dl/blob/master/week6/images/flatten_help.jpg)
-  
+* image and caption data processing/cleaning
+* statistical modeling 
 * writeup/reporting
 
 ## Featured Notebooks/Analysis/Deliverables/Blog Posts
