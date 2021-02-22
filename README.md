@@ -202,7 +202,7 @@ Alternatively see the GitHub documentation on [creating a pull request](https://
 
 ### Methods Used
 
-* Multi-layered Perceptrons (MLPs)
+* Multi-layered Perceptions (MLPs)
 * Convolution Neural Networks (CNN)
 * Recurrent Neural Networks (RNN)
 * Transfer Learning
